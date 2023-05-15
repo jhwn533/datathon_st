@@ -63,7 +63,7 @@ def display_map(df, start_date, end_date):
     
     Choropleth.geojson.add_to(map)
 
-    st_map = st_folium(map, width=900, height=600)
+    st_folium(map, width=900, height=600)
     
     
 def main():
