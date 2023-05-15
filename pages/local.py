@@ -12,8 +12,6 @@ def total_sales(df, start_date, end_date):
     '''
     설정 날짜 내 매출 합산액
     '''
-    # start_date = start_date.date()
-    # end_date = end_date.date()
     
     df = df[(df['date'] >= start_date) & (df['date'] <= end_date)]
     total = df['sales'].sum()
@@ -23,8 +21,6 @@ def total_transactions(df, start_date, end_date):
     '''
     설정 날짜 내 거래내역 수
     '''
-    # start_date = start_date.date()
-    # end_date = end_date.date()
     
     df = df[(df['date'] >= start_date) & (df['date'] <= end_date)]
     total = df['transactions'].sum()
@@ -63,13 +59,14 @@ def display_map(df, start_date, end_date):
     
     Choropleth.geojson.add_to(map)
 
-    st_folium(map, width=900, height=600)
+    st_folium(map, width=900, height=400)
     
     
 def main():
     st.set_page_config(APP_TITLE)
     st.title(APP_TITLE)
-    
+
+
     # date slider
     values = st.slider(
         '데이터 범위(날짜) 선택 🗓️',
@@ -80,11 +77,8 @@ def main():
 
 
     # load data
-    # df = pd.read_parquet('data/train.parquet')
-    # df_store = pd.read_csv('data/stores.csv')
-    # df_merge = pd.merge(df, df_store, on='store_nbr', how='left')
-    # df_ts =pd.read_parquet('data/transactions.parquet')
     df = pd.read_parquet('data/merged_df.parquet')
+
 
     # Facts
     col1, col2 = st.columns(2)
@@ -98,7 +92,7 @@ def main():
     st.write('sales_ratio')
     display_map(df, start_date, end_date)
 
-    
+
 if __name__ == "__main__":
     main()
     
