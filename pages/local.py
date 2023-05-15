@@ -37,7 +37,7 @@ def display_map(df, start_date, end_date):
     df['state'] = df['state'].str.upper()
     
     df = df[(df['date'] >= start_date) & (df['date'] <= end_date)]
-    df = df.groupby(['state'])['sales', 'transactions'].sum().reset_index()
+    df = df.groupby(['state'])[['sales', 'transactions']].sum().reset_index()
     df['sales_ratio'] = (df['sales']/df['transactions'])*100
     
     ec_geo = r'data/provs-ec.json'
