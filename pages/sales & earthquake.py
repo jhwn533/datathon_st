@@ -8,6 +8,7 @@ import matplotlib.dates as mdates
 
 st.title('**강진전후 애니메이션(sales)**')
 
+train = pd.read_parquet('data/train.parquet', engine = 'pyarrow')
 train['date'] = pd.to_datetime(train['date'])
 
 earthquake_date = pd.to_datetime('2016-04-16')
