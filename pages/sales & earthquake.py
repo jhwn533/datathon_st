@@ -5,8 +5,6 @@ import seaborn as sns
 
 from matplotlib.animation import FuncAnimation
 import matplotlib.dates as mdates
-import mplfinance as mpf
-
 
 st.title('**강진전후 애니메이션(sales)**')
 
