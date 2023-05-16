@@ -54,28 +54,6 @@ def product_avg_sales(df):
     st.plotly_chart(fig)
 
 
-def store_avg_sales(df):
-    check=df.groupby('store_nbr').agg({"sales" : "mean"}).reset_index()
-
-    check.columns = [
-        'store_nbr', 
-        'sales'
-    ]
-    check = check.sort_values('sales')
-
-    fig = px.bar(
-        check, 
-        y='store_nbr', 
-        x="sales", 
-        color="sales",
-        orientation='h', 
-        title='상점별 평균매출액', 
-        height=800, 
-        width=800
-    )
-    st.plotly_chart(fig)
-
-
 def main():
     st.set_page_config(APP_TITLE)
     st.title(APP_TITLE)
@@ -91,8 +69,6 @@ def main():
     # product average
     product_avg_sales(df)
 
-    # store average
-    store_avg_sales(df)
 
 if __name__ == "__main__":
     main()
