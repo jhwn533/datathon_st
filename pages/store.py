@@ -18,3 +18,24 @@ if store_nbr:
     sns.barplot(x='family', y='sales', data=top5_sales, palette='viridis')
     plt.title(f'Store {store_nbr}: Top 5 selling product families')
     st.pyplot(plt)
+    
+# store_avg_sales(total)
+check=df.groupby('store_nbr').agg({"sales" : "mean"}).reset_index()
+
+check.columns = [
+    'store_nbr', 
+    'sales'
+]
+check = check.sort_values('sales')
+
+fig = px.bar(
+    check, 
+    y='store_nbr', 
+    x="sales", 
+    color="sales",
+    orientation='h', 
+    title='상점별 평균매출액', 
+    height=800, 
+    width=800
+)
+st.plotly_chart(fig)
