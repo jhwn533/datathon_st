@@ -10,7 +10,7 @@ import plotly.express as px
 from datetime import datetime
 
 
-APP_TITLE = 'seungmin analysis'
+APP_TITLE = 'Analyze by product'
 
 
 def top_10_products(df):
@@ -45,7 +45,7 @@ def product_avg_sales(df):
         x="sales",
         color="sales",
         orientation='h',
-        title='Average Sales by Product',
+        title='제품군별액평균매출액',
         height=800,
         width=800
     )
@@ -69,7 +69,7 @@ def store_avg_sales(df):
         x="sales", 
         color="sales",
         orientation='h', 
-        title='상점 번호 별 평균 판매액', 
+        title='상점별 평균매출액', 
         height=800, 
         width=800
     )
@@ -85,6 +85,7 @@ def main():
     df = pd.read_parquet('data/merged_df.parquet')
     
     # top 10
+    st.write('매출 TOP 10 상품군')
     top_10_products(df)
 
     # product average
