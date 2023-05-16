@@ -5,7 +5,7 @@ import seaborn as sns
 
 from matplotlib.animation import FuncAnimation
 import matplotlib.dates as mdates
-import mplfinance as mpf
+
 st.title('승민님도 store 분석이면 여기에 같이 붙일까요..?')
 train = pd.read_parquet('data/train.parquet', engine = 'pyarrow')
 
