@@ -15,7 +15,7 @@ oil.loc[oil['date'] == '2013-01-01', 'dcoilwtico'] = 93.14
 oil = oil.interpolate(method='linear', limit=20) #보간법
 
 
-st.title('**평균 Sales와 oil price 분석**')
+st.title('**Oil price and Sales Analysis**')
 
 tab1, tab2 = st.tabs(["**일자별 비교(by date)**", "**산점도**"])
 
