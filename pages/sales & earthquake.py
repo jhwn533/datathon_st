@@ -6,7 +6,7 @@ import seaborn as sns
 from matplotlib.animation import FuncAnimation
 import matplotlib.dates as mdates
 
-st.title('**강진전후 sales 추이 분석**')
+st.title('**Analysis of sales before and after a strong earthquake**')
 
 train = pd.read_parquet('data/train.parquet', engine = 'pyarrow')
 train['date'] = pd.to_datetime(train['date'])
