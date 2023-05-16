@@ -45,7 +45,7 @@ def product_avg_sales(df):
         x="sales",
         color="sales",
         orientation='h',
-        title='제품군별액평균매출액',
+        title='제품군별 평균매출액',
         height=800,
         width=800
     )
@@ -85,7 +85,7 @@ def main():
     df = pd.read_parquet('data/merged_df.parquet')
     
     # top 10
-    st.write('매출 TOP 10 상품군')
+    st.markdown('**매출 TOP 10 상품군**')
     top_10_products(df)
 
     # product average
