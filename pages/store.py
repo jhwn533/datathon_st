@@ -20,7 +20,7 @@ if store_nbr:
     st.pyplot(plt)
     
 # store_avg_sales(total)
-check=df.groupby('store_nbr').agg({"sales" : "mean"}).reset_index()
+check=train.groupby('store_nbr').agg({"sales" : "mean"}).reset_index()
 
 check.columns = [
     'store_nbr', 
